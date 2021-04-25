@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, Input} from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -7,8 +7,10 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
+  
+  
   @Input() filterText: string = "";
+  @Input() id: number = 0;
 
   public items$: any;
 
@@ -17,6 +19,7 @@ export class BlogComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getAll();
   }
 
   getAll(){

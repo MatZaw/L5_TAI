@@ -1,7 +1,8 @@
+<div class="card-body">
 <p>
     {{ text | summary:35 }}
    </p>
-   <a [routerLink]="['/blog/detail/1']">
+   <a [routerLink]="['/blog/detail/', id]" class="btn btn-primary">
     Więcej
    </a>
-   
+</div>
